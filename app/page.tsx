@@ -1,103 +1,176 @@
+"use client";
+
+import Header from "./compoment/header";
 import Image from "next/image";
+import { Firlest, Opaline, Vogue } from "./fonts/fonts";
+
+import { useKeenSlider } from "keen-slider/react";
+import { useState } from "react";
+
+const sliderImgs = [
+  "/images/img0.png",
+  "/images/img1.png",
+  "/images/img2.png",
+  "/images/img3.png",
+  "/images/img4.png",
+  "/images/img5.png",
+  "/images/img6.png",
+  "/images/img7.png",
+];
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [loaded, setLoaded] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
+    },
+    created() {
+      setLoaded(true);
+    },
+    slides: {
+      perView: 3,
+      spacing: 15,
+      origin: "center",
+    },
+  });
+
+  return (
+    <div className={`text-[#FFD48B] min-h-screen bg-[#490707]`}>
+      <Header />
+      {/* banner */}
+
+      <section className="mt-[52px] relative min-h-screen w-full text-center bg-[#490707]">
+        {/* Phông nền sân khấu */}
+        <Image
+          src="/bg1.png" // hoặc "/images/banner.png" nếu bạn đặt trong public/images
+          alt="Banner Thanh Sắc Việt"
+          quality={100}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+        />
+
+        {/* Nội dung banner*/}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <div className=" p-4 rounded">
+            <div className="flex items-center justify-center gap-4 my-4 mx-16">
+              <div className="flex-[0.5] h-px  bg-[#ECC985]" />
+              <span
+                className={`text-[#ECC985] font-bold text-xl tracking-widest mb-6 ${Vogue.className}`}
+              >
+                BUỔI HÒA NHẠC
+              </span>
+              <div className="flex-[0.5] h-px bg-[#ECC985]" />
+            </div>
+            <h1
+              className={`text-6xl md:text-7xl  text-[#F6ECC9] my-4 ${Firlest.className}`}
+            >
+              THANH SẮC VIỆT
+            </h1>
+            <p
+              className={`text-[#F6ECC9] text-3xl text-white mb-4 ${Opaline.className}`}
+            >
+              Giao hưởng năm châu
+            </p>
+            <hr />
+            <p className={`text-[#ECC985] text-xl my-2 ${Vogue.className}`}>
+              MỘT SỰ KIỆN CỦA ARIA PROJECT – NƠI ÂM NHẠC, ĐAM MÊ VÀ SỨ MỆNH HỘI
+              TỤ
+            </p>
+            <div className="w-1/2 mx-auto">
+              <hr />
+            </div>
+
+            <div className={`w-2/3 mx-auto`}>
+              <p className="text-md mt-4">
+                <span className="font-bold text-yellow-300">Địa điểm:</span> Nhà
+                hát Trường Cao đẳng Nghệ thuật Hà Nội, số 7 Hai Bà Trưng, Phường
+                Cửa Nam, TP. Hà Nội
+              </p>
+              <p className="text-sm">
+                <span className="font-bold text-yellow-300">Thời gian:</span>{" "}
+                19:00 - 21:00, Thứ 7, ngày 9/8/2025
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Carousel */}
+      <section className=" px-4 relative">
+        {/* Overlay phía trên */}
+        <div className="h-3 bg-gradient-to-b from-[#490707] to-transparent z-10" />
+        <div className="relative max-w-5xl mt-5 mx-auto rounded-xl border border-yellow-500 p-4 pt-12">
+          {/* Slider */}
+          <div ref={sliderRef} className="keen-slider">
+            {sliderImgs.map((e, idx) => (
+              <div
+                key={idx}
+                className={`keen-slider__slide flex justify-center items-center transition-all duration-300`}
+              >
+                <Image
+                  src={`${e}`}
+                  alt={`Slide ${idx}`}
+                  className="rounded-md w-auto max-h-[350px] object-cover"
+                  width={300}
+                  height={200}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Nút điều hướng trái */}
+          <button
+            onClick={() => instanceRef.current?.prev()}
+            className="absolute left-2 top-1/2 -translate-y-1/2 text-yellow-300 text-3xl z-20"
+          >
+            ❮
+          </button>
+
+          {/* Nút điều hướng phải */}
+          <button
+            onClick={() => instanceRef.current?.next()}
+            className="absolute right-2 top-1/2 -translate-y-1/2 text-yellow-300 text-3xl"
+          >
+            ❯
+          </button>
+
+          {/* Dấu chấm chuyển slide */}
+          {loaded && instanceRef.current && (
+            <div className="flex justify-center mt-6 gap-2">
+              {[
+                ...Array(
+                  instanceRef.current.track.details.slides.length
+                ).keys(),
+              ].map((idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    instanceRef.current?.moveToIdx(idx);
+                  }}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    currentSlide === idx
+                      ? "bg-yellow-400 scale-110"
+                      : "bg-yellow-200 opacity-50 hover:opacity-100"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+        {/* Overlay phía dưới */}
+        <div className=" h-3 bg-gradient-to-t from-[#490707] to-transparent z-10" />
+      </section>
+
+      <div id="register-form" className="mt-10 scroll-mt-28">
+        <h2 className="text-xl font-bold">Đăng ký tham gia</h2>
+        <form>{/* ... */}</form>
+      </div>
     </div>
   );
 }
