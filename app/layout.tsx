@@ -9,7 +9,7 @@ const geistSans = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Aria Prject THANH SẮC VIỆT",
+  title: "Aria Project THANH SẮC VIỆT",
   description:
     "THANH SẮC VIỆT - Buổi hòa nhạc Giao hưởng năm châu - MỘT SỰ KIỆN CỦA ARIA PROJECT – NƠI ÂM NHẠC, ĐAM MÊ VÀ SỨ MỆNH HỘI TỤ",
 };
