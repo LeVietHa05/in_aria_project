@@ -384,7 +384,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="p-10 max-w--5xl mx-auto ">
+      <footer className="p-10 max-w-5xl mx-auto ">
         <div className={`${Firlest.className} text-center text-3xl mb-4`}>
           Thông tin liên hệ
         </div>
