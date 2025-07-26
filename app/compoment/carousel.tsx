@@ -27,9 +27,25 @@ export default function Carousel() {
       setLoaded(true);
     },
     slides: {
-      perView: 3,
+      perView: 1,
       spacing: 15,
       origin: "center",
+    },
+    breakpoints: {
+      "(min-width: 768px)": {
+        // Options for screens 768px and wider
+        slides: {
+          perView: 2,
+          spacing: 15,
+        },
+      },
+      "(min-width: 1024px)": {
+        // Options for screens 1024px and wider
+        slides: {
+          perView: 3,
+          spacing: 25,
+        },
+      },
     },
   });
   const [currentSlide, setCurrentSlide] = useState(0);

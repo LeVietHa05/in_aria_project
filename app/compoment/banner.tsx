@@ -17,7 +17,7 @@ export default function Banner() {
       />
 
       {/* Nội dung banner*/}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center sm:px-4">
         <div className=" p-4 rounded ">
           <div className="flex items-center justify-center gap-4 my-4 mx-16">
             <div className="flex-[0.5] h-px  bg-[#ECC985]" />
@@ -29,7 +29,7 @@ export default function Banner() {
             <div className="flex-[0.5] h-px bg-[#ECC985]" />
           </div>
           <h1
-            className={`text-6xl md:text-7xl  text-[#F6ECC9] my-4 ${Firlest.className} tracking-widest`}
+            className={`text-6xl md:text-7xl leading-18 text-[#F6ECC9] my-4 ${Firlest.className} tracking-widest`}
           >
             THANH SẮC VIỆT
           </h1>
@@ -46,7 +46,7 @@ export default function Banner() {
             <hr />
           </div>
 
-          <div className={`w-1/2 xl:w-1/3 mx-auto absolute bottom-16 xl:bottom-32 left-1/2 -translate-x-1/2`}>
+          <div className={`w-full p-4 sm:w-2/3 md:1/2 xl:1/3  mx-auto absolute bottom-16 xl:bottom-32 left-1/2 -translate-x-1/2`}>
             <p className="text-md mt-4 text-[#F7EDCA] mb-4">
               <span className="font-bold text-[#FFD783]">Địa điểm:</span> Nhà
               hát Trường Cao đẳng Nghệ thuật Hà Nội, số 7 Hai Bà Trưng, Phường

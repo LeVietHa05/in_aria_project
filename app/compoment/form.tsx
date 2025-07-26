@@ -54,7 +54,7 @@ export default function Form() {
   return (
     <section
       id="register-form"
-      className=" mt-10 p-16 scroll-mt-12 bg-gradient-to-b from-[#BA3B19] to-[#570D09]"
+      className=" mt-10 p-4 md:p-16 scroll-mt-12 bg-gradient-to-b from-[#BA3B19] to-[#570D09]"
     >
       <div className=" max-w-5xl mx-auto">
         <h2

@@ -6,11 +6,11 @@ export default function Donation() {
   return (
     <section className="relative bg-[#9e3d27] p-10 pt-16 shadow-2xl text-center">
       <h2
-        className={`absolute top-10 left-1/2 -translate-x-1/2 border-b-2 border-[#C58465] rounded-lg pb-4 px-12 text-5xl tracking-widest font-serif mb-4 bg-[#9e3d27] ${Firlest.className}`}
+        className={`absolute top-0 md:top-8 left-1/2 -translate-x-1/2 border-b-2 border-[#C58465] rounded-lg py-4 md:px-12 text-2xl md:text-5xl tracking-widest font-serif mb-5 bg-[#9e3d27] ${Firlest.className}`}
       >
         QUYÊN GÓP TỪ THIỆN
       </h2>
-      <div className="max-w-5xl mx-auto text-center  border-2 rounded-2xl border-[#C58465] py-10 px-16">
+      <div className="max-w-5xl mx-auto text-center  border-2 rounded-2xl border-[#C58465] py-10 px-4 md:px-16">
         <p className="mb-8 text-lg text-[#F2E4C2]">
           Toàn bộ số tiền quyên góp sẽ được Aria Project gửi đến {" "}
           <Link href={"https://cpfav.org.vn/"} className="cursor-pointer text-white font-semibold hover:underline hover:text-white">
