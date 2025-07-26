@@ -3,10 +3,9 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import "keen-slider/keen-slider.min.css";
 
-const geistSans = Montserrat({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const montserrat = Montserrat({
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
   title: "Aria Project THANH SẮC VIỆT",
@@ -21,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} antialiased min-h-screen`}>
+      <body className={`${montserrat.className} antialiased min-h-screen`}>
         {children}
       </body>
     </html>
