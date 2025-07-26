@@ -6,7 +6,7 @@ export default function Donation() {
   return (
     <section className="relative bg-[#9e3d27] p-10 pt-16 shadow-2xl text-center">
       <h2
-        className={`absolute top-0 md:top-8 left-1/2 -translate-x-1/2 border-b-2 border-[#C58465] rounded-lg py-4 md:px-12 text-2xl md:text-5xl tracking-widest font-serif mb-5 bg-[#9e3d27] ${Firlest.className}`}
+        className={`absolute top-0 md:top-4 left-1/2 -translate-x-1/2 border-b-2 border-[#C58465] rounded-lg py-4 md:px-12 text-2xl md:text-5xl tracking-widest font-serif mb-5 bg-[#9e3d27] ${Firlest.className}`}
       >
         QUYÊN GÓP TỪ THIỆN
       </h2>
