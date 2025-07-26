@@ -46,7 +46,7 @@ export default function Banner() {
             <hr />
           </div>
 
-          <div className={`w-1/3 mx-auto absolute bottom-32 left-1/2 -translate-x-1/2`}>
+          <div className={`w-1/2 xl:w-1/3 mx-auto absolute bottom-16 xl:bottom-32 left-1/2 -translate-x-1/2`}>
             <p className="text-md mt-4 text-[#F7EDCA] mb-4">
               <span className="font-bold text-[#FFD783]">Địa điểm:</span> Nhà
               hát Trường Cao đẳng Nghệ thuật Hà Nội, số 7 Hai Bà Trưng, Phường

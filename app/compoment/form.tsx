@@ -162,7 +162,7 @@ export default function Form() {
             onClick={handleSubmit}
             className={`rounded-full bg-[#FFF9D7]  w-full max-w-96 mx-auto p-4 text-center font-bold text-[#87200B] text-2xl ${Vogue.className}`}
           >
-            {loading ? <span>Đang gửi </span> : <span>Submit</span>}
+            {loading ? <span>Đang gửi </span> : <span>Gửi </span>}
           </div>
         </form>
       </div>

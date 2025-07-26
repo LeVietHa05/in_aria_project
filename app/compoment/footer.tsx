@@ -16,7 +16,7 @@ export default function Footer() {
             (Ban truyền thông)
           </p>
           <div className="flex items-center justify-center gap-2">
-            <span>📞</span>
+            <Image src={"/call.svg"} width={24} height={24} alt="call"></Image>
             <span className="font-semibold text-yellow-100">0356 113 090</span>
           </div>
         </div>
@@ -26,7 +26,7 @@ export default function Footer() {
           <h3 className="font-semibold text-lg">Nguyễn Vũ Linh Chi</h3>
           <p className="text-sm mb-2 text-yellow-300 italic">(Ban tài chính)</p>
           <div className="flex items-center justify-center gap-2">
-            <span>📞</span>
+            <Image src={"/call.svg"} width={24} height={24} alt="call"></Image>
             <span className="font-semibold text-yellow-100">0337 395 308</span>
           </div>
         </div>
