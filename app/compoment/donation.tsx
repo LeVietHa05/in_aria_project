@@ -14,7 +14,7 @@ export default function Donation() {
         <p className="mb-8 text-lg text-[#F2E4C2]">
           Toàn bộ số tiền quyên góp sẽ được Aria Project gửi đến {" "}
           <Link href={"https://cpfav.org.vn/"} className="cursor-pointer text-white font-semibold hover:underline hover:text-white">
-            Hội gia đình trẻ em và người bại não Việt Nam
+            Hội gia đình trẻ em và người bại não <br /> Việt Nam
           </Link>{" "}
           để hỗ trợ các hoàn cảnh khó khăn và góp phần lan tỏa những giá trị tốt
           đẹp.

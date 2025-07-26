@@ -52,7 +52,7 @@ export default function Banner() {
               hát Trường Cao đẳng Nghệ thuật Hà Nội, số 7 Hai Bà Trưng, Phường
               Cửa Nam, TP. Hà Nội
             </p>
-            <p className="text-sm text-[#F7EDCA]">
+            <p className="text-md text-[#F7EDCA]">
               <span className="font-bold text-[#FFD783]">Thời gian:</span> 19:00
               - 21:00, Thứ 7, ngày 9/8/2025
             </p>
