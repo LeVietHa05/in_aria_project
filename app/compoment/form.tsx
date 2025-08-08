@@ -16,15 +16,11 @@ export default function Form() {
     }
   }, [errorLog]);
 
-  const url =
-    "https://script.google.com/macros/s/AKfycbxFGR06ssjuc6mQK97jpyaGkKxt70Nh62Fi_aDH_ZqBbv61AV01XNdPdn4E-r_j1qqV/exec";
-
   const handleSubmit = async (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     setLoading(true);
-    if (errorLog) {
-      return;
-    }
+
+    if (errorLog) return;
 
     if (
       !formData.name ||
@@ -33,23 +29,31 @@ export default function Form() {
       !formData.numOfPeople
     ) {
       setErrorLog("Vui lòng điền đầy đủ thông tin");
+      setLoading(false);
       return;
     }
-    console.log("submit: ");
-    console.log(
-      formData.name,
-      formData.phone,
-      formData.email,
-      formData.numOfPeople
-    );
 
-    await fetch(url, {
-      method: "POST",
-      body: JSON.stringify(formData),
-    });
-    setLoading(false);
-    alert("Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.");
-    setFormData({ name: "", phone: "", email: "", numOfPeople: "" });
+    try {
+      console.log("Submit:", formData);
+
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        throw new Error('Gửi form thất bại');
+      }
+
+      alert("Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.");
+      setFormData({ name: "", phone: "", email: "", numOfPeople: "" });
+    } catch (err) {
+      console.error(err);
+      alert("Có lỗi xảy ra, vui lòng thử lại sau.");
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <section
